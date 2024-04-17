@@ -1,6 +1,4 @@
-# @turbowarp/scratch-parser
-
-scratch-parser with bug fixes.
+`scratch-parser` with bug fixes.
 
 ## License
 
