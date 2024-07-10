@@ -26,7 +26,8 @@
         "stringOrNumber": {
             "oneOf": [
                 {"type": "string"},
-                {"type": "number"}
+                {"type": "number"},
+                {"type": "object"}
             ]
         },
         "scalarVal": {
