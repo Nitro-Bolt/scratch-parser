@@ -15,6 +15,12 @@
                 {"type": "null"}
             ]
         },
+        "optionalJSON": {
+             "oneOf": [
+                  {"type": "object"},
+                  {"type": "array"}
+              ]
+         },
         "boolOrOptBoolString": {
             "oneOf": [
                 {"type": "string",
@@ -26,12 +32,12 @@
         "stringOrNumber": {
             "oneOf": [
                 {"type": "string"},
-                {"type": "number"},
-                {"type": "object"}
+                {"type": "number"}
             ]
         },
         "scalarVal": {
             "oneOf": [
+                {"$ref":"#/definitions/optionalJSON"},
                 {"$ref":"#/definitions/stringOrNumber"},
                 {"type": "boolean"}
             ]
