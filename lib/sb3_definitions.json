@@ -128,6 +128,18 @@
             ],
             "additionalItems": false
         },
+        "table": {
+            "type": "array",
+            "items": [
+                {"type":"string", "description": "name of the table"},
+                {
+                    "type": "array",
+                    "description": "contents of the table",
+                    "items": {"$ref":"#/definitions/scalarVal"}
+                }
+            ],
+            "additionalItems": false
+        },
         "broadcast_message": {
             "type": "string",
             "description": "the message being broadcasted"
@@ -212,10 +224,27 @@
             "minItems": 3,
             "maxItems": 5
         },
+        "table_primitive": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "number",
+                    "enum": [14]
+                },
+                {"type": "string", "description": "table name"},
+                {"type": "string", "description": "table id"}
+            ],
+            "additionalItems": {
+                "type": "number"
+            },
+            "minItems": 3,
+            "maxItems": 5
+        },
         "topLevelPrimitive": {
             "oneOf": [
                 {"$ref":"#/definitions/variable_primitive"},
-                {"$ref":"#/definitions/list_primitive"}
+                {"$ref":"#/definitions/list_primitive"},
+                {"$ref":"#/definitions/table_primitive"}
             ]
         },
         "inputPrimitive": {
@@ -225,7 +254,8 @@
                 {"$ref":"#/definitions/text_primitive"},
                 {"$ref":"#/definitions/broadcast_primitive"},
                 {"$ref":"#/definitions/variable_primitive"},
-                {"$ref":"#/definitions/list_primitive"}
+                {"$ref":"#/definitions/list_primitive"},
+                {"$ref":"#/definitions/table_primitive"}
             ]
         },
         "block": {
@@ -418,6 +448,10 @@
                 "lists": {
                     "type": "object",
                     "additionalProperties": {"$ref":"#/definitions/list"}
+                },
+                "tables": {
+                    "type": "object",
+                    "additionalProperties": {"$ref":"#/definitions/table"}
                 },
                 "broadcasts": {
                     "type": "object",
