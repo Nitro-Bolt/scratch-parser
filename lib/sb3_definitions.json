@@ -15,12 +15,6 @@
                 {"type": "null"}
             ]
         },
-        "optionalJSON": {
-             "oneOf": [
-                  {"type": "object"},
-                  {"type": "array"}
-              ]
-         },
         "boolOrOptBoolString": {
             "oneOf": [
                 {"type": "string",
