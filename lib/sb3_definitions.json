@@ -15,12 +15,6 @@
                 {"type": "null"}
             ]
         },
-        "optionalJSON": {
-             "oneOf": [
-                  {"type": "object"},
-                  {"type": "array"}
-              ]
-         },
         "boolOrOptBoolString": {
             "oneOf": [
                 {"type": "string",
@@ -35,13 +29,7 @@
                 {"type": "number"}
             ]
         },
-        "scalarVal": {
-            "oneOf": [
-                {"$ref":"#/definitions/optionalJSON"},
-                {"$ref":"#/definitions/stringOrNumber"},
-                {"type": "boolean"}
-            ]
-        },
+        "scalarVal": {},
         "assetId": {
             "type": "string",
             "pattern": "^[a-fA-F0-9]{32}$"
