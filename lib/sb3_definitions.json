@@ -95,6 +95,35 @@
                 "name"
             ]
         },
+        "asset": {
+            "type": "object",
+            "properties": {
+                "assetId": { "$ref": "#/definitions/assetId"},
+                "dataFormat": {
+                    "type": "string"
+                },
+                "contentType": {
+                    "type": "string"
+                },
+                "md5ext": {
+                    "type": "string",
+                    "pattern": "^[a-fA-F0-9]{32}\\.[a-zA-Z0-9]+$"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "lastModified": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "assetId",
+                "dataFormat",
+                "contentType",
+                "name",
+                "lastModified"
+            ]
+        },
         "scalar_variable": {
             "type": "array",
             "items": [
@@ -458,6 +487,11 @@
                 "sounds": {
                     "type": "array",
                     "items": {"$ref":"#/definitions/sound"},
+                    "uniqueItems": true
+                },
+                "assets": {
+                    "type": "array",
+                    "items": {"$ref":"#/definitions/asset"},
                     "uniqueItems": true
                 },
                 "volume": {
