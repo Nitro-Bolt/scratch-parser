@@ -11,10 +11,12 @@ jobs:
     - uses: actions/checkout@v6
       with:
         persist-credentials: false
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
     - name: Install Node.js
       uses: actions/setup-node@v6
       with:
         node-version: 24
-    - run: npm ci
-    - run: npm run test:lint
-    - run: npm run test
+    - run: pnpm install --frozen-lockfile
+    - run: pnpm run test:lint
+    - run: pnpm run test
