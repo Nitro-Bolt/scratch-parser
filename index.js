@@ -1,8 +1,8 @@
-var pify = require('pify');
+var promisify = require('util').promisify;
 
-var unpack = pify(require('./lib/unpack'));
-var parse = pify(require('./lib/parse'));
-var validate = pify(require('./lib/validate'));
+var unpack = promisify(require('./lib/unpack'));
+var parse = promisify(require('./lib/parse'));
+var validate = promisify(require('./lib/validate'));
 
 /**
   * Unpacks, parses, validates, and analyzes Scratch projects. If successful,

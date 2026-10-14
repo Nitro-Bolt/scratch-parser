@@ -26,7 +26,7 @@ test('spec', function (t) {
 });
 
 test('sb', function (t) {
-    var buffer = new Buffer(fixtures.sb);
+    var buffer = Buffer.from(fixtures.sb);
     unzip(buffer, false, function (err, res) {
         t.type(err, 'string');
         t.equal(err.startsWith(errorMessage), true);
@@ -36,7 +36,7 @@ test('sb', function (t) {
 });
 
 test('sb2', function (t) {
-    var buffer = new Buffer(fixtures.sb2);
+    var buffer = Buffer.from(fixtures.sb2);
     unzip(buffer, false, function (err, res) {
         t.equal(err, null);
         t.equal(Array.isArray(res), true);
@@ -50,7 +50,7 @@ test('sb2', function (t) {
 });
 
 test('sb2 with nested folder', function (t) {
-    var buffer = new Buffer(fixtures.sb2Nested);
+    var buffer = Buffer.from(fixtures.sb2Nested);
     unzip(buffer, false, function (err, res) {
         t.equal(err, null);
         t.equal(Array.isArray(res), true);
@@ -64,7 +64,7 @@ test('sb2 with nested folder', function (t) {
 });
 
 test('zip without project json', function (t) {
-    var buffer = new Buffer(fixtures.zipNoProjectJSON);
+    var buffer = Buffer.from(fixtures.zipNoProjectJSON);
     unzip(buffer, false, function (err, res) {
         t.type(err, 'string');
         t.equal(err.startsWith(errorMessage), true);
@@ -74,7 +74,7 @@ test('zip without project json', function (t) {
 });
 
 test('zip with fake project json', function (t) {
-    var buffer = new Buffer(fixtures.zipFakeProjectJSON);
+    var buffer = Buffer.from(fixtures.zipFakeProjectJSON);
     unzip(buffer, false, function (err, res) {
         t.equal(err, null);
         t.equal(Array.isArray(res), true);

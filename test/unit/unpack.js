@@ -20,7 +20,7 @@ test('spec', function (t) {
 });
 
 test('sb', function (t) {
-    var buffer = new Buffer(fixtures.sb);
+    var buffer = Buffer.from(fixtures.sb);
     unpack(buffer, false, function (err, res) {
         t.type(err, 'string');
         t.type(res, 'undefined');
@@ -29,7 +29,7 @@ test('sb', function (t) {
 });
 
 test('sb2', function (t) {
-    var buffer = new Buffer(fixtures.sb2);
+    var buffer = Buffer.from(fixtures.sb2);
     unpack(buffer, false, function (err, res) {
         t.equal(err, null);
         t.equal(Array.isArray(res), true);
@@ -43,7 +43,7 @@ test('sb2', function (t) {
 });
 
 test('sb2 does not validate as sprite', function (t) {
-    var buffer = new Buffer(fixtures.sb2);
+    var buffer = Buffer.from(fixtures.sb2);
     unpack(buffer, true, function (err, res) {
         t.type(err, 'string');
         t.type(res, 'undefined');
@@ -52,7 +52,7 @@ test('sb2 does not validate as sprite', function (t) {
 });
 
 test('json', function (t) {
-    var buffer = new Buffer(fixtures.json);
+    var buffer = Buffer.from(fixtures.json);
     unpack(buffer, false, function (err, res) {
         t.equal(err, null);
         t.equal(Array.isArray(res), true);
@@ -66,7 +66,7 @@ test('json', function (t) {
 });
 
 test('json utf-8 string', function (t) {
-    var buffer = new Buffer(fixtures.json);
+    var buffer = Buffer.from(fixtures.json);
     unpack(buffer.toString('utf-8'), false, function (err, res) {
         t.equal(err, null);
         t.equal(Array.isArray(res), true);
