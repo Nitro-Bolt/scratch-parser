@@ -130,10 +130,11 @@
                 {"type": "string", "description": "name of the variable"},
                 {"$ref":"#/definitions/scalarVal", "description": "value of the variable"},
                 {"type": "boolean", "description": "whether this is a cloud variable"},
-                {"type": "string", "pattern": "^[a-zA-Z0-9_-]+$", "description": "declared value type"}
+                {"type": "string", "pattern": "^[a-zA-Z0-9_-]+$", "description": "declared value type"},
+                {"type": "string", "pattern": "^#[a-fA-F0-9]{6}$", "description": "declared color"}
             ],
             "additionalItems": false,
-            "maxItems": 4
+            "maxItems": 5
         },
         "list": {
             "type": "array",
