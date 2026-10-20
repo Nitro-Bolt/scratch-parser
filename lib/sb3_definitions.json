@@ -128,10 +128,12 @@
             "type": "array",
             "items": [
                 {"type": "string", "description": "name of the variable"},
-                {"$ref":"#/definitions/scalarVal", "description": "value of the variable"}
+                {"$ref":"#/definitions/scalarVal", "description": "value of the variable"},
+                {"type": "boolean", "description": "whether this is a cloud variable"},
+                {"type": "string", "pattern": "^[a-zA-Z0-9_-]+$", "description": "declared value type"}
             ],
-            "additionalItems": {"type": "boolean", "enum": [true], "description": "Whether this is a cloud variable"},
-            "maxItems": 3
+            "additionalItems": false,
+            "maxItems": 4
         },
         "list": {
             "type": "array",
