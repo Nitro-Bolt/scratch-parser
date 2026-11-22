@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@turbowarp/json": "^0.1.1",
-    "@turbowarp/jszip": "^3.11.0",
+    "@turbowarp/jszip": "^4.0.0",
     "@turbowarp/sb3fix": "^0.6.0",
     "ajv": "8.20.0",
     "pify": "4.0.1"
